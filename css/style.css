@@ -1,0 +1,80 @@
+:root{
+    --background-color: #EDFFF3;
+    --primary-color: #43A37B;
+}
+
+body{
+    background-color: var(--background-color);
+    padding: 0;
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
+.form-login{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px gray;
+    background-color: white;
+}
+.head-login{
+    background-color: var(--primary-color);
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+.head-login p{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+.form-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+label{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input{
+    width: 100%;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+input:focus{
+    border: 2px solid #417690;
+    background-color: var(--background-color);
+}
+form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.submit-button input {
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.error-message {
+    color: red;
+    text-align: center
+}
+.go-page{
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}
