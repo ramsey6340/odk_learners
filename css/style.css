@@ -4,17 +4,22 @@
     --botton-color: #3487FF;
 }
 
+html,
 body {
     background-color: var(--background-color);
+    height: 100%;
     padding: 0;
     margin: 0;
 }
 
 .header-page {
     background-color: var(--primary-color);
-    height: 10%;
+    height: 5%;
     margin: 0;
     padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-page h1 {
@@ -23,11 +28,28 @@ body {
     color: white;
 }
 
+.logout-button {
+    background-color: var(--primary-color);
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.logout-button a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    height: 95%;
+}
+
 nav {
     background-color: black;
     width: 20%;
     height: 100%;
-    margin: -10;
 }
 
 nav p {
@@ -39,13 +61,18 @@ nav a {
     color: white;
 }
 
+ul {
+    padding: 0;
+}
+
 li {
     list-style-type: none;
     margin-top: 5px;
+    padding: 0 20px;
 }
 
-main {
-    display: flex;
+li[class="link"]:hover {
+    border-left: 2px solid var(--primary-color);
 }
 
 .button-add {
@@ -162,4 +189,8 @@ form {
     text-align: center;
     color: black;
     font-size: 18px;
+}
+
+font-size: 18px;
+
 }
