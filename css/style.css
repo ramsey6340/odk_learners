@@ -51,6 +51,7 @@ nav {
     background-color: black;
     width: 20%;
     height: 100%;
+
 }
 
 nav p {
@@ -160,14 +161,14 @@ tr {
     width: 100%;
     margin: 10px 0;
 }
-.col input{
+.col input, .col select{
     width: 60%;
 }
 .form-login {
-    width: 40%;
-    /* margin: auto; */
+    width: 100%;
+    /* height: 100%; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     box-shadow: 1px 1px 8px gray;
@@ -182,16 +183,31 @@ tr {
     display: flex;
 }
 .signin-main{
-    width: 80%;
-    height: 40%;
+    width: 60%;
+    height: 50%;
     margin: auto;
+    margin-top: 100px;
     display: flex;
 }
-
+.logo-signin{
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 360%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .section-left{
     background-color: var(--primary-color);
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* height: 100%; */
 }
 .head-login {
     background-color: var(--primary-color);
@@ -217,12 +233,10 @@ tr {
 label {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    font-weight: bold;
     margin-bottom: 5px;
 }
 
-input {
-    width: 100%;
+input, select {
     padding: 5px;
     border: 2px solid black;
     border-radius: 5px;
@@ -258,8 +272,4 @@ form {
     text-align: center;
     color: black;
     font-size: 18px;
-}
-
-font-size: 18px;
-
 }

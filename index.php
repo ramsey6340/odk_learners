@@ -14,7 +14,11 @@
         <?php include("nav.php"); ?>
         <!-- Contenue de la page principale -->
         <?php 
-                $query = $_GET['q'];
+                $query = 'l';
+                if(isset($_GET['q'])){
+                    $query = $_GET['q'];
+                }
+                
                 if($query == 'l'){
                     include("list.php");
                 }

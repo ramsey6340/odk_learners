@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Veuillez vous connecté</h1>
     <div class="signin-main">
         <div class="section-left">
             <!-- Logo de ODK -->
@@ -14,8 +14,8 @@
             </div>
         </div>
         <div class="form-login">
-            <div><p>Connexion</p></div>
-            <form action="login" method="post">
+            <div><p style="font-weight: bold;">Connexion</p></div>
+            <form action="./model/login.php" method="post">
                 <div class="form-input">
                     <label for="login">Pseudo</label>
                     <input type="text" id="login" name="login">
@@ -33,7 +33,5 @@
             </form>
         </div>
     </div>
-    <p style="text-align: center"><a href="signup.html" class="go-page">S'inscrire</a></p>
-
 </body>
 </html>

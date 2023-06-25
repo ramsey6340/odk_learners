@@ -1,3 +1,4 @@
+<?php include('./model/read-learners.php'); ?>
 <section class="list-page">
             <!-- Contenue principal de la page -->
             <table>
@@ -7,89 +8,32 @@
                     <td>Téléphone</td>
                     <td>Promotion</td>
                     <td>Email</td>
-                    <td>date de Certification</td>
-                    <td>Date de naissance</td>
+                    <td>Certification</td>
+                    <td>Age</td>
+                    <td>Naissance</td>
                     <td>Action</td>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Idrissa Dembele</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Drissa Sidiki Traore</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Nouhoun Soumare</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Abdallah Sacko</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Aicha Camara</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;Idrissa Keita</div></td>
-                        <td>P2M24567</td>
-                        <td>72189654</td>
-                        <td>ODK2</td>
-                        <td>idrissa@gmail.com</td>
-                        <td>2023</td>
-                        <td>10/02/2000</td>
-                        <td>
-                            <a href="#"><img src="media/icons/edit.png" alt="Modifier"></a>
-                            <a href="#"><img src="media/icons/delete.png" alt="Supprimer"></a>
-                        </td>
-                    </tr>
+                    <?php 
+                        foreach($apprenants as $apprenant){
+                            ?>
+                                <tr>
+                                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;<?php echo $apprenant['prenom'].' '.$apprenant['nom']; ?></div></td>
+                                    <td><?= $apprenant['matricule'] ?></td>
+                                    <td><?= $apprenant['telephone'] ?></td>
+                                    <td><?= $apprenant['promotion'] ?></td>
+                                    <td><?= $apprenant['email'] ?></td>
+                                    <td><?= $apprenant['annee_cert'] ?></td>
+                                    <td><?= $apprenant['age'] ?></td>
+                                    <td><?= $apprenant['date_naissance'] ?></td>
+                                    <td>
+                                        <a href="index.php?q=e&lid=<?= $apprenant['id_app'] ?>"><img src="media/icons/edit.png" alt="Modifier"></a>
+                                        <a href="./model/delete-learner.php?lid=<?= $apprenant['id_app'] ?>"><img src="media/icons/delete.png" alt="Supprimer"></a>
+                                    </td>
+                                </tr>
+                            <?php
+                        }
+                    ?>
                 </tbody>
             </table>
         </section>
