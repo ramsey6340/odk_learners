@@ -122,10 +122,15 @@ h1 {
     width: 100%;
     padding: 0 20px;
 }
-.edit-page p{
+.titre{
     font-size: 18px;
     line-height: 40px;
     border-bottom: 1px solid black;
+}
+.error-message{
+    font-size: 14px;
+    text-align: left;  
+    color: red;
 }
 
 table {

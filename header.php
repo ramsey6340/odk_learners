@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!-- Entête  de la page -->
 <header class="header-page">
     <div>

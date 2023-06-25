@@ -10,7 +10,7 @@
                     <img src="media/icons/add.png" alt=""  class="icon-add">
                 </div>
                 <div>
-                <p>Ajouter</p>
+                <p style="cursor: pointer;">Ajouter</p>
                 </div>
             </button>
             </a>

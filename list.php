@@ -18,7 +18,7 @@
                         foreach($apprenants as $apprenant){
                             ?>
                                 <tr>
-                                    <td class="profile-name"><div><img src="media/images/default_profile.png" alt="" class="profile"></div><div>&nbsp;<?php echo $apprenant['prenom'].' '.$apprenant['nom']; ?></div></td>
+                                    <td class="profile-name"><div><img src="media/uploads/<?= $apprenant['photo'] ?>" alt="" class="profile"></div><div>&nbsp;<?php echo $apprenant['prenom'].' '.$apprenant['nom']; ?></div></td>
                                     <td><?= $apprenant['matricule'] ?></td>
                                     <td><?= $apprenant['telephone'] ?></td>
                                     <td><?= $apprenant['promotion'] ?></td>
