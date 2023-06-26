@@ -24,11 +24,9 @@ function managementTelephone(event) {
     let isSuccess = reTelephone.test(telephoneValue);
     if(!isSuccess){
         telephoneError.textContent = 'Le format du numero de téléphone est incorrecte';
-        submitButton.disabled = true;
     }
     else{
         telephoneError.textContent = '';
-        submitButton.disabled = false;
     }
 
 }
@@ -37,11 +35,9 @@ function managementPromotion(event) {
     let isSuccess = rePromotion.test(promotionValue);
     if(!isSuccess){
         promotionError.textContent = 'Le format de la promotion est incorrecte';
-        submitButton.disabled = true;
     }
     else{
         promotionError.textContent = '';
-        submitButton.disabled = false;
     }
 }
 function managementAnneeCert(event) {
@@ -49,16 +45,14 @@ function managementAnneeCert(event) {
     let isSuccess = reAnneeCert.test(anneeCertValue);
     if(!isSuccess){
         anneeCertError.textContent = "Le format de l'année de certification est incorrecte";
-        submitButton.disabled = true;
     }
     else{
         anneeCertError.textContent = '';
-        submitButton.disabled = false;
     }
 }
 
 function submitForm(){
-    if(telephoneError.textContent.length>0 || promotionError.textContent.length>0 || anneeCertValue.textContent.length>0){
+    if(telephoneError.textContent.length>0 || promotionError.textContent.length>0 || anneeCertError.textContent.length>0){
         return 'erreur';
     }
 }
