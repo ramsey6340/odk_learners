@@ -50,6 +50,7 @@
             <div class="col">
                 <label for="telephone">Téléphone</label>
                 <input type="tel" id="telephone" name="telephone" placeholder="Ex: 72196636"  value="<?= (isset($apprenant))? $apprenant['telephone']: "" ?>" required>
+                <p class="telephone-error" style="color: red;"></p>
             </div>
 
             <div class="col">
@@ -62,17 +63,19 @@
             <div class="col">
                 <label for="promotion">Promotion</label>
                 <input type="text" id="promotion" name="promotion" placeholder="Ex: P1" value="<?= (isset($apprenant))? $apprenant['promotion']: "" ?>" required>
+                <p class="promotion-error" style="color: red;"></p>
             </div>
 
             <div class="col">
                 <label for="annee_cert">Année de certification</label>
                 <input type="text" id="annee_cert" name="annee_cert" max="4" min="4" placeholder="Ex: 2023"  value="<?= (isset($apprenant))? $apprenant['annee_cert']: "" ?>" required>
+                <p class="annee_cert-error" style="color: red;"></p>
             </div>
         </div>
         <br>
         <input type="hidden" name="id_app" value="<?= (isset($apprenant))? $apprenant['id_app']: 0 ?>">
         <div class="submit-button">
-            <input type="submit" value="Valider">
+            <input type="submit" value="Valider" class="submit-button">
         </div>
     </form>
 </section>
