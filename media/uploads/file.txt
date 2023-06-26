@@ -1,0 +1,1 @@
+Je suis un fichier txt, crée pour permettre l'envoie du repertoire uploads sur github sans amené les images avec lui
