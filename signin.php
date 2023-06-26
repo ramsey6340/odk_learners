@@ -27,11 +27,12 @@
             </div>
 
                 <div class="submit-button">
-                    <input type="submit" value="Connexion">
+                    <input type="submit" value="Valider">
                 </div>
                 <br>
             </form>
         </div>
     </div>
+    <p  style="text-align: center;"><a href="signup.php"  style="color: black; ">S'inscrire</a></p>
 </body>
 </html>
