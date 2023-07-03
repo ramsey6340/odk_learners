@@ -69,7 +69,7 @@ session_start();
                             'promotion'=>$promotion, 
                             'annee_cert'=>$annee_cert
                         ));
-                        
+                       $_SESSION['success'] = 'success';
                         // fermeture de la requête
                         $request->closeCursor();
                     }

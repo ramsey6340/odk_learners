@@ -1,3 +1,4 @@
+// selection des champs
 const telephoneInput = document.getElementById('telephone');
 const promotionInput = document.getElementById('promotion');
 const anneeCertInput = document.getElementById('annee_cert');
@@ -14,8 +15,8 @@ submitButton.addEventListener('click', submitForm);
 
 
 // Creation de mes modeles d'expression reguliere
-const reTelephone = new RegExp("^[0-9]{8}$", "g"); // le g indique que l'expression doit être evaluée globalement sur l'ensemble de la chaine
-const rePromotion = new RegExp("^P[0-9]+$", "g"); // le g indique que l'expression doit être evaluée globalement sur l'ensemble de la chaine
+const reTelephone = new RegExp("^[0-9]{8}$"); // le g indique que l'expression doit être evaluée globalement sur l'ensemble de la chaine
+const rePromotion = new RegExp("^P[0-9]+$"); // le g indique que l'expression doit être evaluée globalement sur l'ensemble de la chaine
 const reAnneeCert = new RegExp("^[0-9]{4}$", "g"); // le g indique que l'expression doit être evaluée globalement sur l'ensemble de la chaine
 
 // Creation des fonctions de gestion des élément

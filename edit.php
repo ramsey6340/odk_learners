@@ -12,6 +12,14 @@
                 <?php
             }
         }
+        if (isset($_SESSION['success'])){
+            ?>
+            <script>
+                alert("Ajout reussi");
+            </script>
+        <?php
+        unset($_SESSION['success']);
+        }
     ?>
     <form action="<?= (isset($apprenant))? "./model/update-learner.php":"./model/create-learner.php" ?>" method="post" enctype="multipart/form-data">
         <div class="row">
@@ -79,4 +87,4 @@
         </div>
     </form>
 </section>
-<?php $_SESSION['error'] = ''; ?>
+<?php unset($_SESSION['error']); ?>
