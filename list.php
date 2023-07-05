@@ -20,8 +20,8 @@
                                 <tr>
                                     <td class="profile-name"><div><img src="media/uploads/<?= $apprenant['photo'] ?>" alt="" class="profile"></div><div>&nbsp;<?php echo $apprenant['prenom'].' '.$apprenant['nom']; ?></div></td>
                                     <td><?= $apprenant['matricule'] ?></td>
-                                    <td><?= $apprenant['telephone'] ?></td>
-                                    <td><?= $apprenant['promotion'] ?></td>
+                                    <td><?= $apprenant['num_tel'] ?></td>
+                                    <td><?= $apprenant['titre'] ?></td>
                                     <td><?= $apprenant['email'] ?></td>
                                     <td><?= $apprenant['annee_cert'] ?></td>
                                     <td><?= $apprenant['age'] ?></td>

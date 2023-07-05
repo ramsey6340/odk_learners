@@ -22,7 +22,17 @@
                 </div>
                 <div>
                     <p><a href="index.php?q=l" class="button-list-app">Apprenants</a></p>
+                </div><br>
+            </div>
+        </li>
+        <li class="link">
+            <div class="link-title">
+                <div>
+                    <p><img src="media/icons/list.png" alt="" class="icon-add"></p>
                 </div>
+                <div>
+                    <p><a href="index.php?q=p" class="button-list-app">Promotion</a></p>
+                </div><br>
             </div>
         </li>
     </ul>

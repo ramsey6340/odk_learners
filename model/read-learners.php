@@ -4,7 +4,7 @@
     // Connexion à la base de donnée
     include('connection.php');
 
-    $request = $db->query('SELECT * FROM apprenant');
+    $request = $db->query('SELECT * FROM apprenant JOIN promotion using(id_pro)');
     $apprenants = array();
 
     while($data = $request->fetch()){

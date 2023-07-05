@@ -1,4 +1,8 @@
-<?php include('./model/read-learner.php'); ?>
+<?php 
+include('./model/read-learner.php');
+include('./model/read-promotions.php');
+
+ ?>
 <section class="edit-page">
     <!-- Ajouter ou modifier un apprenant -->
     <p class="titre">
@@ -24,7 +28,7 @@
     <form action="<?= (isset($apprenant))? "./model/update-learner.php":"./model/create-learner.php" ?>" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
-            <input type="file" id="avatar" accept="image/png, image/jpeg" name="avatar" required>
+            <input type="file" id="avatar" accept="image/png, image/jpeg" name="avatar" value="<?= (isset($apprenant))? 'media/uploads/'.$apprenant['photo']: "" ?>" required>
             <?php 
                 if(isset($apprenant)){
                     ?>
@@ -57,23 +61,29 @@
         <div class="row">
             <div class="col">
                 <label for="telephone">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="Ex: 72196636"  value="<?= (isset($apprenant))? $apprenant['telephone']: "" ?>" required>
+                <input type="tel" id="telephone" name="telephone" placeholder="Ex: 72196636"  value="<?= (isset($apprenant))? $apprenant['num_tel']: "" ?>"  minlength="8" maxlength="8" required>
                 <p class="telephone-error" style="color: red;"></p>
             </div>
 
             <div class="col">
                 <label for="date_naissance">Date de naissance</label>
-                <input type="date" id="date_naissance" name="date_naissance"  value="<?= (isset($apprenant))? $apprenant['date_naissance']: "" ?>" required>
+                <input type="date" id="date_naissance" name="date_naissance"  value="<?= (isset($apprenant))? $apprenant['date_naissance']: "" ?>" minlength="4" maxlength="4" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
                 <label for="promotion">Promotion</label>
-                <input type="text" id="promotion" name="promotion" placeholder="Ex: P1" value="<?= (isset($apprenant))? $apprenant['promotion']: "" ?>" required>
-                <p class="promotion-error" style="color: red;"></p>
+                <select name="promotion" id="promotion">
+                   <?php
+                    foreach($promotions as $promotion){
+                        ?>
+                       <option value="<?= $promotion['id_pro'] ?>" <?= (isset($apprenant) AND $apprenant['id_pro']==$promotion['id_pro'] )? "selected": "" ?>> <?= $promotion['titre'] ?><option>
+                       <?php
+                    } 
+                   ?>
+                </select>
             </div>
-
             <div class="col">
                 <label for="annee_cert">Année de certification</label>
                 <input type="text" id="annee_cert" name="annee_cert" max="4" min="4" placeholder="Ex: 2023"  value="<?= (isset($apprenant))? $apprenant['annee_cert']: "" ?>" required>

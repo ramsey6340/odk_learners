@@ -30,8 +30,11 @@ if(!isset($_SESSION['admin'])){
                 if($query == 'l'){
                     include("list.php");
                 }
-                else{
+                elseif($query == 'e'){
                     include("edit.php");
+                }
+                else{
+                    include("add-promotion.php");
                 }
             ?>
     </main>

@@ -12,6 +12,7 @@ session_start();
     $promotion = htmlspecialchars($_POST['promotion']);
     $annee_cert = htmlspecialchars($_POST['annee_cert']);
 
+    // Creation d'une variable d'erreur
     $error_message = array();
     // Vérification pour s'assurer qu'aucun champ n'est vide
     if(!isset($_FILES['avatar']) OR !isset($prenom) OR !isset($nom) OR !isset($email) OR !isset($telephone) OR !isset($date_naissance) OR !isset($promotion) OR !isset($annee_cert)){
@@ -48,35 +49,27 @@ session_start();
                     $name = basename($_FILES['avatar']['name']);
                     $_SESSION['photo'] = $photo;
 
-                    // Traitement de la promotion
-                    $taille = strlen($promotion);
-                    $var = (int)$promotion[1];
-                    if($taille==2 AND $var!=0 AND $promotion[0]=='P'){
-                        // Connexion à la base de donnée
-                        include('connection.php');
+                   
+                    // Connexion à la base de donnée
+                    include('connection.php');
 
-                        $request = $db->prepare('INSERT INTO apprenant(id_adm, matricule, nom, prenom, age, date_naissance, email, telephone, photo, promotion, annee_cert) VALUES(:id_adm, :matricule, :nom, :prenom, :age, :date_naissance, :email, :telephone, :photo, :promotion, :annee_cert)');
-                        $request->execute(array(
-                            'id_adm'=>$_SESSION['admin']['id_adm'],
-                            'matricule'=>$matricule,
-                            'nom'=>$nom, 
-                            'prenom'=>$prenom, 
-                            'age'=>$age, 
-                            'date_naissance'=>$date_naissance, 
-                            'email'=>$email, 
-                            'telephone'=>$telephone, 
-                            'photo'=>$photo, 
-                            'promotion'=>$promotion, 
-                            'annee_cert'=>$annee_cert
-                        ));
-                       $_SESSION['success'] = 'success';
-                        // fermeture de la requête
-                        $request->closeCursor();
-                    }
-                    else{
-                        $error_message[] = "Le format de la promotion est incorrecte. Il doit être de la forme PX avec X le numero de la promotion";
-                    }
-
+                    $request = $db->prepare('INSERT INTO apprenant(id_adm, id_pro, matricule, nom, prenom, age, date_naissance, email, num_tel, photo, annee_cert) VALUES(:id_adm, :id_pro, :matricule, :nom, :prenom, :age, :date_naissance, :email, :num_tel, :photo, :annee_cert)');
+                    $request->execute(array(
+                        'id_adm'=>$_SESSION['admin']['id_adm'],
+                        'id_pro'=>$promotion,
+                        'matricule'=>$matricule,
+                        'nom'=>$nom, 
+                        'prenom'=>$prenom, 
+                        'age'=>$age, 
+                        'date_naissance'=>$date_naissance, 
+                        'email'=>$email, 
+                        'num_tel'=>$telephone, 
+                        'photo'=>$photo, 
+                        'annee_cert'=>$annee_cert
+                    ));
+                    $_SESSION['success'] = 'success';
+                    // fermeture de la requête
+                    $request->closeCursor();
                 }
                 else{
                     $error_message[] = "Le type de fichier choisie n'est pas prie en charge, Veuillez recommencer";
